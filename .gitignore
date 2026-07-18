@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Astro
+dist/
+.astro/
+
+# Vercel
+.vercel/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Logs
+*.log
+
+# Test artifacts
+coverage/
+test-results/
+playwright-report/
