@@ -1,0 +1,73 @@
+---
+import Reveal from 'astro-reveal/Reveal.astro';
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <Reveal animation="up">
+      <p class="hero__eyebrow">Nome Cognome — Data Scientist Junior</p>
+      <h1 class="hero__title">
+        Trasformo dati grezzi in decisioni: SQL, Machine Learning e Data Visualization applicati a
+        problemi reali.
+      </h1>
+      <p class="hero__subtitle">
+        Portfolio di progetti end-to-end — dall'estrazione dati alla modellazione, fino alla
+        comunicazione dei risultati.
+      </p>
+      <a href="#progetti" class="hero__cta">Guarda i progetti</a>
+    </Reveal>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    background: linear-gradient(180deg, var(--color-surface), var(--color-bg));
+  }
+
+  .hero__inner {
+    max-width: 42rem;
+  }
+
+  .hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    line-height: 1.2;
+    margin: 0 0 var(--space-sm);
+  }
+
+  .hero__subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    margin: 0 0 var(--space-md);
+  }
+
+  .hero__cta {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero__cta:hover {
+    filter: brightness(1.1);
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding-block: var(--space-lg);
+    }
+  }
+</style>

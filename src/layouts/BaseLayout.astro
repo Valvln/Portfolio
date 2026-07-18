@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = new URL(Astro.request.url).pathname;
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph (T038) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+    <header class="site-header">
+      <nav class="container site-nav" aria-label="Navigazione principale">
+        <a href="/" class="site-nav__brand">Data Scientist Junior</a>
+        <ul class="site-nav__links">
+          <li><a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a></li>
+          <li>
+            <a href="/about" aria-current={currentPath === '/about' ? 'page' : undefined}>About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} — Portfolio Data Scientist Junior</p>
+      </div>
+    </footer>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: var(--color-primary);
+        color: var(--color-primary-contrast);
+        padding: var(--space-xs) var(--space-sm);
+        z-index: 100;
+      }
+      .skip-link:focus {
+        left: var(--space-sm);
+        top: var(--space-sm);
+      }
+
+      .site-header {
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-bg);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: var(--space-sm);
+      }
+
+      .site-nav__brand {
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--color-text);
+      }
+
+      .site-nav__links {
+        list-style: none;
+        display: flex;
+        gap: var(--space-md);
+        margin: 0;
+        padding: 0;
+      }
+
+      .site-nav__links a {
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: 500;
+        padding: var(--space-xs);
+      }
+
+      .site-nav__links a[aria-current='page'] {
+        color: var(--color-primary);
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--space-xl);
+        padding-block: var(--space-lg);
+        color: var(--color-text-muted);
+        font-size: 0.875rem;
+      }
+    </style>
+  </body>
+</html>

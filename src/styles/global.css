@@ -1,0 +1,91 @@
+/* Design token condivisi — base per il Principio "Professionalità Creativa":
+   palette, tipografia e spaziatura coerenti su tutto il sito. */
+
+:root {
+  /* Palette — contrasto AA verificato su sfondo chiaro */
+  --color-bg: #ffffff;
+  --color-surface: #f5f6f8;
+  --color-text: #16181d;
+  --color-text-muted: #454b5c;
+  --color-primary: #1d4ed8;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #047857;
+  --color-border: #e1e3e8;
+
+  /* Tag colors (SQL / ML / Viz) — verificati con axe-core per contrasto AA
+     (testo bianco, ≥4.5:1) contro sfondo bianco/surface */
+  --color-tag-sql: #6d28d9;
+  --color-tag-ml: #1d4ed8;
+  --color-tag-viz: #047857;
+
+  /* Tipografia */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+
+  /* Spaziatura */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --radius-md: 0.75rem;
+  --shadow-card: 0 1px 3px rgba(22, 24, 29, 0.08), 0 1px 2px rgba(22, 24, 29, 0.06);
+}
+
+/* Nota: un tema dark non è richiesto da spec.md/costituzione ed è stato
+   rimosso dopo che l'audit Lighthouse/axe-core ha rilevato un contrasto
+   insufficiente (2.74:1) sui link primari non ritarati per sfondi scuri.
+   Un solo tema chiaro, interamente verificato, è preferibile a un tema
+   dark aggiunto senza verificare ogni coppia colore/sfondo (vedi tasks.md
+   T040/T041). Reintrodurlo in futuro richiede di ritarare esplicitamente
+   --color-primary e i --color-tag-* per il contrasto su sfondo scuro. */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

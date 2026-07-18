@@ -1,0 +1,96 @@
+---
+import type { About } from '../../lib/about';
+
+interface Props {
+  about: About;
+}
+
+const { about } = Astro.props;
+
+const mailtoHref = about.contactEmail
+  ? `mailto:${about.contactEmail}?subject=${encodeURIComponent('Contatto dal portfolio')}`
+  : undefined;
+---
+
+<section class="about-section" aria-labelledby="about-heading">
+  <div class="container about-section__inner">
+    <h1 id="about-heading">About</h1>
+    <p class="about-section__summary">{about.summary}</p>
+
+    <h2>Competenze</h2>
+    <ul class="about-section__skills">
+      {about.skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    <h2>Contatti</h2>
+    <div class="about-section__contacts">
+      {
+        mailtoHref && (
+          <a href={mailtoHref} class="about-section__contact-link">
+            ✉️ {about.contactEmail}
+          </a>
+        )
+      }
+      {
+        about.linkedinUrl && (
+          <a
+            href={about.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="about-section__contact-link"
+          >
+            🔗 LinkedIn <span class="visually-hidden">(apre in una nuova scheda)</span>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding-block: var(--space-xl);
+  }
+
+  .about-section__inner {
+    max-width: 40rem;
+  }
+
+  .about-section__summary {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+
+  .about-section__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: var(--space-sm) 0 var(--space-lg);
+  }
+
+  .about-section__skills li {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.25rem 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .about-section__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: flex-start;
+  }
+
+  .about-section__contact-link {
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .about-section__contact-link:hover {
+    text-decoration: underline;
+  }
+</style>

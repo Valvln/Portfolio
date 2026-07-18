@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutSection from '../components/about/AboutSection.astro';
+import { getAbout } from '../lib/about';
+
+const about = await getAbout();
+---
+
+<BaseLayout
+  title="About — Data Scientist Junior"
+  description="Sintesi professionale, competenze e contatti del candidato."
+>
+  <AboutSection about={about} />
+</BaseLayout>

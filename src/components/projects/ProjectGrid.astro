@@ -1,0 +1,51 @@
+---
+import { getProjects } from '../../lib/projects';
+import ProjectCard from './ProjectCard.astro';
+import TagFilter from './TagFilter';
+import PdfViewer from '../pdf/PdfViewer';
+
+const projects = await getProjects();
+---
+
+<section id="progetti" class="project-grid-section" aria-labelledby="progetti-heading">
+  <div class="container">
+    <h2 id="progetti-heading">Progetti</h2>
+    <TagFilter client:visible />
+
+    <div class="project-grid">
+      {
+        projects.map((project) => (
+          <ProjectCard project={project}>
+            {project.pdfPresentation && (
+              <Fragment slot="pdf-viewer">
+                <PdfViewer
+                  client:visible
+                  fileUrl={project.pdfPresentation.file}
+                  label={project.pdfPresentation.label ?? 'Visualizza presentazione'}
+                  projectTitle={project.title}
+                />
+              </Fragment>
+            )}
+          </ProjectCard>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-grid-section {
+    padding-block: var(--space-xl);
+  }
+
+  .project-grid-section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+</style>
