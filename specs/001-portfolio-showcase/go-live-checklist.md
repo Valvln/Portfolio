@@ -67,25 +67,23 @@ poter validare davvero ogni componente. **Sostituiti con contenuti reali il
   una per progetto. I 2 export sopra i 50 MB sono stati compressi con
   Ghostscript (`/ebook`, 150 dpi): 54,7→8,5 MB e 56,5→1,2 MB; verificato
   il rendering nel viewer e la validità dei 5 file serviti.
-- [ ] `astro.config.mjs`: `site: 'https://example-portfolio.vercel.app'` è
-  un placeholder — aggiornare con il dominio reale una volta noto (impatta
-  URL canonici e tag Open Graph). **Da fare al momento del collegamento a
-  Vercel** (bloccante deploy, sotto).
+- [x] `astro.config.mjs`: `site` aggiornato al dominio reale
+  **`https://valerio-quaranta.vercel.app`** (2026-07-19) — canonical e
+  `og:url` verificati nell'output di build.
 
 ## 🔴 Bloccante — deploy
 
-- [ ] **Collegare il repository a Vercel** (T044, non eseguibile
-  autonomamente: richiede l'accesso al tuo account). Passi:
-  1. Push del repository su GitHub/GitLab/Bitbucket.
-  2. Su vercel.com → "Add New Project" → importa il repository (Astro
-     viene rilevato automaticamente, adapter `@astrojs/vercel` già
-     configurato in `astro.config.mjs`).
-  3. Deploy: build/output già verificati localmente (`npm run build`
-     completa senza errori).
-  4. Ripetere gli scenari di [quickstart.md](./quickstart.md) sulla
-     preview URL generata da Vercel prima di promuovere in produzione.
-- [ ] Configurare il dominio personalizzato (se previsto) e aggiornare
-  `site` in `astro.config.mjs` di conseguenza.
+- [x] **Collegare il repository a Vercel** (T044) — **fatto il 2026-07-19**:
+  progetto importato da `Valvln/Portfolio`, deploy automatico da `main`,
+  preview URL per ogni PR. Deployment Protection disattivata per la
+  produzione (inizialmente attiva: il dominio rispondeva con redirect al
+  login Vercel). Scenari di [quickstart.md](./quickstart.md) rieseguiti
+  **sul sito live**: 26/26 verifiche Playwright e Lighthouse
+  100/100/100/100 su Home e About.
+- [x] Dominio configurato: **`valerio-quaranta.vercel.app`** (rinominato
+  dai nomi generati da Vercel) e `site` in `astro.config.mjs` aggiornato
+  di conseguenza. Eventuale dominio personalizzato acquistato in futuro:
+  aggiungerlo in Vercel → Settings → Domains e aggiornare di nuovo `site`.
 
 ## 🟡 Consigliate — SEO
 

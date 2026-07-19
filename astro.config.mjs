@@ -21,5 +21,5 @@ export default defineConfig({
     // da Lighthouse/axe-core al primo caricamento (vedi tasks.md T040/T041).
     reveal({ mode: 'observer' }),
   ],
-  site: 'https://example-portfolio.vercel.app',
+  site: 'https://valerio-quaranta.vercel.app',
 });
