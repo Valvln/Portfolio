@@ -9,17 +9,31 @@ indica se è **bloccante** (da fare prima del lancio) o **consigliata**
 
 ## 🔴 Bloccanti — sicurezza
 
-- [ ] **Aggiornare Astro dalla 5.18.2 alla 7.1.1** (o successiva). `npm audit`
+- [x] **Aggiornare Astro dalla 5.18.2 alla 7.1.1** (o successiva). `npm audit`
   ha rilevato 5 vulnerabilità (4 high, 1 low) nella versione attuale,
   incluse più CVE di tipo XSS e un SSRF via header `Host` sulle pagine di
   errore prerenderizzate, oltre a una vulnerabilità nell'adapter
   `@astrojs/vercel` (path override non autenticato). È un aggiornamento
   **major** (breaking change dichiarato da npm): va pianificato con
   ri-test completo (build, typecheck, tutti gli scenari di
-  `quickstart.md`), non applicato "al volo". Non eseguito automaticamente
-  in questa sessione proprio per questo motivo.
-- [ ] Rieseguire `npm audit` dopo l'aggiornamento e confermare 0
+  `quickstart.md`), non applicato "al volo".
+  **✅ Eseguito il 2026-07-19**: `astro@7.1.1`, `@astrojs/vercel@11.0.3`,
+  `@astrojs/react@6.0.1`. Unico breaking change incontrato: le content
+  collections legacy sono rimosse in Astro 6+, risolto spostando
+  `src/content/config.ts` → `src/content.config.ts` (i loader `glob` erano
+  già in uso, nessuna modifica al contenuto). Ri-test completo: build ok,
+  `astro check` 0 errori, lint 0 errori, tutti gli scenari 1–4 di
+  `quickstart.md` ri-validati con Playwright sulla build di produzione
+  (20/20 verifiche, 0 errori console), Lighthouse 100/100/100/100
+  (Performance/A11y/Best Practices/SEO) su Home **e** About.
+- [x] Rieseguire `npm audit` dopo l'aggiornamento e confermare 0
   vulnerabilità high/critical residue.
+  **✅ `npm audit`: 0 vulnerabilità totali.** Nota: `@vercel/routing-utils`
+  (transitiva dell'adapter, usata solo in build) blocca deliberatamente
+  `path-to-regexp@6.1.0` (ReDoS, GHSA-9wv6-86v2-598j); risolto con un
+  `overrides` npm a `path-to-regexp@6.3.0` (stessa major, release di fix)
+  in `package.json`. Se un futuro aggiornamento dell'adapter passa a
+  `path-to-regexp` ≥6.3.0, l'override può essere rimosso.
 
 ## 🔴 Bloccanti — contenuti reali (placeholder da sostituire)
 
