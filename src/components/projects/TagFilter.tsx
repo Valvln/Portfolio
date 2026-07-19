@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-type TagValue = 'all' | 'sql' | 'ml' | 'viz';
+type TagValue = 'all' | 'sql' | 'ml' | 'viz' | 'python';
 
 const TAGS: { value: TagValue; label: string }[] = [
   { value: 'all', label: 'Tutti' },
   { value: 'sql', label: 'SQL' },
   { value: 'ml', label: 'ML' },
   { value: 'viz', label: 'Viz' },
+  { value: 'python', label: 'Python' },
 ];
 
 /**

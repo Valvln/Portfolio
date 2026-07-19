@@ -9,7 +9,7 @@ const projects = defineCollection({
     .object({
       title: z.string().min(1),
       description: z.string().min(1),
-      tags: z.array(z.enum(['sql', 'ml', 'viz'])).min(1),
+      tags: z.array(z.enum(['sql', 'ml', 'viz', 'python'])).min(1),
       githubUrl: z.string().url().optional(),
       linkedinUrl: z.string().url().optional(),
       pdfPresentation: z
