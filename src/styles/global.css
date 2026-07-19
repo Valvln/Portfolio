@@ -12,11 +12,12 @@
   --color-accent: #047857;
   --color-border: #e1e3e8;
 
-  /* Tag colors (SQL / ML / Viz) — verificati con axe-core per contrasto AA
-     (testo bianco, ≥4.5:1) contro sfondo bianco/surface */
+  /* Tag colors (SQL / ML / Viz / Python) — verificati con axe-core per
+     contrasto AA (testo bianco, ≥4.5:1) contro sfondo bianco/surface */
   --color-tag-sql: #6d28d9;
   --color-tag-ml: #1d4ed8;
   --color-tag-viz: #047857;
+  --color-tag-python: #92400e;
 
   /* Tipografia */
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;

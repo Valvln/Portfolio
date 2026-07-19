@@ -38,36 +38,39 @@ indica se è **bloccante** (da fare prima del lancio) o **consigliata**
 ## 🔴 Bloccanti — contenuti reali (placeholder da sostituire)
 
 Il sito è stato implementato con contenuti plausibili ma segnaposto, per
-poter validare davvero ogni componente. **Nessuno di questi va in
-produzione così com'è**:
+poter validare davvero ogni componente. **Sostituiti con contenuti reali il
+2026-07-19** (ri-test completo: 26/26 verifiche Playwright, Lighthouse
+100×4 su Home e About):
 
-- [ ] `src/components/landing/Hero.astro`: sostituire "Nome Cognome" con il
-  nome reale.
-- [ ] `src/content/about/about.md`: sostituire `contactEmail`
-  (`nome.cognome@example.com`) con l'email reale; verificare `linkedinUrl`
-  punti al profilo reale; rivedere `summary` e `skills` perché riflettano
-  il percorso effettivo.
-- [ ] I 5 file in `src/content/projects/project-*.md` sono progetti
-  d'esempio plausibili (churn prediction, dashboard vendite, sentiment
-  analysis, pipeline ETL, clustering) con `githubUrl` che punta a
-  `github.com/your-username/...` — **link non funzionanti**, da sostituire
-  con i repository reali (o rimuovere/sostituire il progetto se non
-  corrisponde a un lavoro effettivo).
-- [ ] `linkedinUrl` nei progetti punta a `linkedin.com/in/your-profile/` —
-  sostituire con il profilo reale.
-- [ ] **Principio costituzionale "Data-First Design"**: le descrizioni
-  progetto attuali non includono ancora risultati quantificabili né
-  metriche di validazione (es. "AUC 0.89", "+12% precisione vs baseline"),
-  richiesti esplicitamente dal principio. Aggiungerli per ciascun progetto
-  reale.
-- [ ] `public/pdf/review-sentiment-analysis.pdf` è un PDF segnaposto
-  generato via script (una pagina di solo testo) — sostituire con l'export
-  reale della presentazione Canva. Decidere anche se altri progetti oltre
-  al terzo debbano avere una presentazione (`pdfPresentation` nello schema
-  è opzionale per-progetto).
+- [x] `src/components/landing/Hero.astro`: "Nome Cognome" → **Valerio
+  Quaranta**.
+- [x] `src/content/about/about.md`: `contactEmail` →
+  `vlr.quaranta@gmail.com`, `linkedinUrl` → profilo reale
+  (`linkedin.com/in/valerio-quaranta-873a512ba`), `summary` e `skills`
+  riscritti sul percorso effettivo (PostgreSQL, pandas/scikit-learn/
+  statsmodels, Plotly/Matplotlib/Seaborn).
+- [x] I 5 progetti d'esempio sostituiti con i 5 repository reali di
+  `github.com/Valvln` (file rinominati con slug parlanti):
+  `water-safety-ai` (Project-Water-Safety-AI), `sql-renewables`
+  (progetto_sql), `education-impact` (project_data_manipulation),
+  `diabetes-ml` (project_ML), `travel-sge` (progetto_python). Per
+  Travel SGE è stato aggiunto il tag `python` a schema, filtro, card e
+  palette (`--color-tag-python: #92400e`, contrasto testo bianco ≈7:1).
+- [x] `linkedinUrl` in tutti i progetti → profilo reale.
+- [x] **Principio "Data-First Design"**: ogni descrizione ora contiene
+  risultati quantificati dove il progetto li documenta (es. diabete:
+  R² ≈ 0,49 su test con gap train/test 2%; water safety: pari accuratezza
+  con 3 variabili in meno) e fatti misurabili altrove (campioni, periodi,
+  n. obiettivi analitici). Margine di miglioramento: estrarre metriche
+  puntuali aggiuntive (es. AUC di Water Safety) dai notebook.
+- [x] PDF segnaposto rimosso; **5 presentazioni reali** in `public/pdf/`,
+  una per progetto. I 2 export sopra i 50 MB sono stati compressi con
+  Ghostscript (`/ebook`, 150 dpi): 54,7→8,5 MB e 56,5→1,2 MB; verificato
+  il rendering nel viewer e la validità dei 5 file serviti.
 - [ ] `astro.config.mjs`: `site: 'https://example-portfolio.vercel.app'` è
   un placeholder — aggiornare con il dominio reale una volta noto (impatta
-  URL canonici e tag Open Graph).
+  URL canonici e tag Open Graph). **Da fare al momento del collegamento a
+  Vercel** (bloccante deploy, sotto).
 
 ## 🔴 Bloccante — deploy
 

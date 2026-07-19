@@ -59,6 +59,12 @@ Esito atteso ↔ SC-001, SC-002.
 7. **Verifica**: nessuna azione di visualizzazione/download è mostrata (nessun
    elemento vuoto o rotto) — conferma FR-009.
 
+> **Nota (2026-07-19)**: con i contenuti reali tutti e 5 i progetti hanno una
+> presentazione, quindi i passi 6–7 non sono attualmente esercitabili sui
+> contenuti di produzione. FR-009 resta garantito dal rendering condizionale
+> (`project.pdfPresentation &&` in ProjectGrid/ProjectCard): per ri-testarlo
+> basta rimuovere temporaneamente `pdfPresentation` da un progetto in dev.
+
 Esito atteso ↔ SC-003.
 
 ## Scenario 4 — Recruiter valuta il profilo in About (US4, P4)
