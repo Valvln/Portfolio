@@ -1,0 +1,172 @@
+{
+  "workflow": "companion",
+  "specName": "header hero redesign",
+  "branch": "002-header-hero-redesign",
+  "currentStep": "plan",
+  "status": "planned",
+  "history": [
+    {
+      "step": "specify",
+      "substep": null,
+      "kind": "start",
+      "by": "extension",
+      "at": "2026-08-04T14:21:38.643Z"
+    },
+    {
+      "step": "specify",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-08-04T14:26:04.697Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "kind": "start",
+      "by": "extension",
+      "at": "2026-08-04T14:38:35.914Z"
+    },
+    {
+      "step": "plan",
+      "substep": "research",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-04T14:42:08.755Z"
+    },
+    {
+      "step": "plan",
+      "substep": "design",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-04T14:46:37.580Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-08-04T14:47:30.859Z"
+    }
+  ],
+  "last_action": "living specs evaluated — skipped (not configured)",
+  "coverage": {
+    "FR-001": {
+      "title": "L'intestazione riporta esattamente 'Valerio Quaranta - A Data Science Hub'"
+    },
+    "FR-002": {
+      "title": "L'intestazione resta un collegamento alla home, usabile anche da tastiera"
+    },
+    "FR-003": {
+      "title": "La riga 'Valerio Quaranta — Data Scientist Junior' sopra il titolo è rimossa"
+    },
+    "FR-004": {
+      "title": "Il blocco titolo contiene le tre righe previste nell'ordine indicato"
+    },
+    "FR-005": {
+      "title": "Le tre righe hanno dimensioni di carattere strettamente decrescenti"
+    },
+    "FR-006": {
+      "title": "Stacco verticale maggiore tra seconda e terza riga"
+    },
+    "FR-007": {
+      "title": "L'intero blocco titolo è allineato al centro"
+    },
+    "FR-008": {
+      "title": "Le tre righe formano un unico titolo principale della pagina"
+    },
+    "FR-009": {
+      "title": "Il sottotitolo è in inglese e mantiene il significato attuale"
+    },
+    "FR-010": {
+      "title": "Il sottotitolo è più distanziato dal blocco titolo rispetto a prima"
+    },
+    "FR-011": {
+      "title": "Il sottotitolo è allineato al centro"
+    },
+    "FR-012": {
+      "title": "Il pulsante CTA ha testo in inglese"
+    },
+    "FR-013": {
+      "title": "Il pulsante è subito sotto il sottotitolo e centrato"
+    },
+    "FR-014": {
+      "title": "Il pulsante continua a portare alla sezione progetti"
+    },
+    "FR-015": {
+      "title": "Nessun altro testo del sito viene modificato o tradotto"
+    },
+    "FR-016": {
+      "title": "Nessuna sezione aggiunta, rimossa o ristrutturata oltre a header e hero"
+    },
+    "FR-017": {
+      "title": "Header e hero leggibili e senza scorrimento orizzontale da 320px in su"
+    },
+    "FR-018": {
+      "title": "Contrasto e navigabilità da tastiera preservati sugli elementi modificati"
+    }
+  },
+  "size": "normal",
+  "classification": {
+    "projectedFiles": 3,
+    "projectedTasks": 8,
+    "scopeSignal": "larger",
+    "verdict": "normal"
+  },
+  "context": [
+    "area: src/components/landing/Hero.astro (eyebrow, titolo, sottotitolo, CTA)",
+    "area: src/layouts/BaseLayout.astro (brand dell'intestazione)",
+    "area: src/styles/global.css (design token di spaziatura e tipografia)",
+    "constraint: costituzione — Professionalità Creativa: nessuna scelta estetica può compromettere accessibilità o performance",
+    "constraint: nessuna modifica strutturale oltre header e hero; resto del sito non tradotto",
+    "constraint: tema unico chiaro, palette e font già verificati AA — non ritarare colori"
+  ],
+  "intent": "Riscrivere in inglese intestazione e hero della home con un blocco titolo centrato a gerarchia tipografica decrescente, sottotitolo distanziato e CTA tradotta.",
+  "expectations": [
+    "Traduzione del resto del sito (nav, progetti, footer) — spec successiva",
+    "Comportamento di 'Visualizza presentazione' / anteprima PDF — spec successiva",
+    "Contenuto della sezione About — spec futura",
+    "Redesign strutturale, nuove sezioni, cambio di palette o famiglia tipografica"
+  ],
+  "decisions": [
+    {
+      "decision": "Lo stacco prima della terza riga del titolo è spaziatura CSS, non una riga di testo vuota — confermato dall'utente al gate review-spec (motivo: una riga vuota reale verrebbe annunciata dagli screen reader)."
+    },
+    {
+      "decision": "Blocco titolo come unico h1 con tre <span> a blocco",
+      "why": "FR-008 richiede un solo titolo di primo livello e la lettura delle tre righe come heading unico; gli span a blocco permettono dimensioni e margini per riga",
+      "rejected": "Tre elementi separati (h1+p+p), che spezzano il titolo in annunci scollegati; h1 con <br>, che non consente dimensioni diverse per riga"
+    },
+    {
+      "decision": "Dimensioni delle righe 2 e 3 derivate in em dal font-size dellh1, con pavimento max() sulla riga 3",
+      "why": "SC-003 chiede decrescenza stretta su tutti i viewport: tre clamp() indipendenti possono incrociarsi a larghezze intermedie e invertire la gerarchia, un difetto invisibile testando solo 320/768/1280px. Il rapporto in em e costante per costruzione a ogni larghezza",
+      "rejected": "Tre clamp() indipendenti; dimensioni fisse per breakpoint con media query"
+    },
+    {
+      "decision": "Allineamento centrato applicato a .hero__inner, genitore del wrapper Reveal",
+      "why": "Lereditarieta attraversa il nodo generato da astro-reveal senza dipendere da quale elemento la libreria renda, quindi il componente resta corretto anche se la libreria cambia",
+      "rejected": "text-align sul singolo h1 e sul singolo p, che duplica la regola e va aggiornata a ogni aggiunta futura nella hero"
+    },
+    {
+      "decision": "Intestazione: la barra di navigazione va a capo su viewport stretti e il brand riduce leggermente la dimensione",
+      "why": "Il nuovo brand e di 37 caratteri contro 21; a 320px il contenitore lascia 272px utili e il solo brand ne occupa circa 280, con i collegamenti che ne chiedono altri 110 sulla stessa riga: senza wrap i due gruppi si sovrappongono",
+      "rejected": "Troncamento con ellissi (nasconde copy pinnato da FR-001); brand abbreviato su mobile (due identita diverse per viewport); menu hamburger (ristruttura la navigazione, fuori scope FR-016)"
+    },
+    {
+      "decision": "Verifica tramite scenari di quickstart.md eseguiti con Playwright/axe, senza introdurre playwright.config ne suite versionata",
+      "why": "E la convenzione gia stabilita dalla feature 001 (tests/ vuote e non versionate, verifiche T040-T042 condotte con Playwright/axe in modo puntuale); introdurre infrastruttura di test dentro una feature di copy e tipografia merita una spec propria",
+      "rejected": "Aggiungere playwright.config.ts e uno spec versionato ora; sola ispezione visiva, che non misura SC-003/SC-005/SC-007"
+    },
+    {
+      "decision": "Nessun data-model.md prodotto",
+      "why": "La feature non introduce ne rimodella entita: non tocca dati, schema o content collection, e la spec stessa omette Key Entities. Un documento di sole diciture N/A aggiungerebbe rumore",
+      "rejected": "Produrre data-model.md vuoto per completezza formale"
+    }
+  ],
+  "approach": "Modifica confinata al livello di presentazione di due componenti Astro esistenti (BaseLayout.astro, Hero.astro): copy inglese, blocco titolo come unico h1 con tre righe interne, dimensioni delle righe 2 e 3 derivate in em dal titolo per garantire la decrescenza a ogni viewport, spaziatura dai token esistenti di global.css. Nessuna dipendenza nuova, nessun token nuovo, nessun colore cambiato; verifica tramite gli scenari di quickstart.md eseguiti con Playwright/axe senza suite versionata.",
+  "step_summaries": {
+    "plan": {
+      "summary": "Piano per la riscrittura inglese di header e hero: due file sorgente, nessuna dipendenza nuova, 7 decisioni di ricerca, contratto UI con 16 invarianti verificabili e 6 scenari di validazione.",
+      "key_finding": "Tre clamp() indipendenti per le tre righe del titolo potrebbero incrociarsi a viewport intermedi e invertire la gerarchia richiesta da SC-003 senza che i breakpoint testati lo rivelino: ancorare le righe 2 e 3 in em al font-size dellh1 rende la decrescenza vera per costruzione."
+    }
+  }
+}
