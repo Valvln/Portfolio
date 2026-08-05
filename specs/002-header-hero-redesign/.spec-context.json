@@ -2,8 +2,8 @@
   "workflow": "companion",
   "specName": "header hero redesign",
   "branch": "002-header-hero-redesign",
-  "currentStep": "plan",
-  "status": "planned",
+  "currentStep": "implement",
+  "status": "completed",
   "history": [
     {
       "step": "specify",
@@ -46,63 +46,291 @@
       "kind": "complete",
       "by": "extension",
       "at": "2026-08-04T14:47:30.859Z"
+    },
+    {
+      "step": "tasks",
+      "substep": null,
+      "kind": "start",
+      "by": "extension",
+      "at": "2026-08-05T21:15:04.573Z"
+    },
+    {
+      "step": "tasks",
+      "substep": "generate",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:17:10.429Z"
+    },
+    {
+      "step": "tasks",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-08-05T21:17:30.505Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "kind": "start",
+      "by": "extension",
+      "at": "2026-08-05T21:27:06.304Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T001",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:29:17.018Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T002",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:29:48.157Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T003",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:30:42.529Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T004",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:31:53.799Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T005",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:35:20.236Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T006",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:35:39.308Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T007",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:36:22.773Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T008",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:37:37.954Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T009",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:38:11.798Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T010",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:39:08.496Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T011",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:39:57.360Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T012",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:43:03.315Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T013",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:43:03.450Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T014",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:43:03.590Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T015",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T21:43:15.358Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-08-05T21:43:15.553Z"
     }
   ],
-  "last_action": "living specs evaluated — skipped (not configured)",
+  "last_action": "15/15 task completati — 0 violazioni axe su / e /about, lint e build puliti, solo 2 file sorgente modificati",
   "coverage": {
     "FR-001": {
-      "title": "L'intestazione riporta esattamente 'Valerio Quaranta - A Data Science Hub'"
+      "title": "L'intestazione riporta esattamente 'Valerio Quaranta - A Data Science Hub'",
+      "tasks": [
+        "T006",
+        "T008"
+      ]
     },
     "FR-002": {
-      "title": "L'intestazione resta un collegamento alla home, usabile anche da tastiera"
+      "title": "L'intestazione resta un collegamento alla home, usabile anche da tastiera",
+      "tasks": [
+        "T006",
+        "T008"
+      ]
     },
     "FR-003": {
-      "title": "La riga 'Valerio Quaranta — Data Scientist Junior' sopra il titolo è rimossa"
+      "title": "La riga 'Valerio Quaranta — Data Scientist Junior' sopra il titolo è rimossa",
+      "tasks": [
+        "T003",
+        "T005"
+      ]
     },
     "FR-004": {
-      "title": "Il blocco titolo contiene le tre righe previste nell'ordine indicato"
+      "title": "Il blocco titolo contiene le tre righe previste nell'ordine indicato",
+      "tasks": [
+        "T003",
+        "T005"
+      ]
     },
     "FR-005": {
-      "title": "Le tre righe hanno dimensioni di carattere strettamente decrescenti"
+      "title": "Le tre righe hanno dimensioni di carattere strettamente decrescenti",
+      "tasks": [
+        "T004",
+        "T005"
+      ]
     },
     "FR-006": {
-      "title": "Stacco verticale maggiore tra seconda e terza riga"
+      "title": "Stacco verticale maggiore tra seconda e terza riga",
+      "tasks": [
+        "T004",
+        "T005"
+      ]
     },
     "FR-007": {
-      "title": "L'intero blocco titolo è allineato al centro"
+      "title": "L'intero blocco titolo è allineato al centro",
+      "tasks": [
+        "T002",
+        "T005"
+      ]
     },
     "FR-008": {
-      "title": "Le tre righe formano un unico titolo principale della pagina"
+      "title": "Le tre righe formano un unico titolo principale della pagina",
+      "tasks": [
+        "T003",
+        "T005",
+        "T013"
+      ]
     },
     "FR-009": {
-      "title": "Il sottotitolo è in inglese e mantiene il significato attuale"
+      "title": "Il sottotitolo è in inglese e mantiene il significato attuale",
+      "tasks": [
+        "T009",
+        "T011"
+      ]
     },
     "FR-010": {
-      "title": "Il sottotitolo è più distanziato dal blocco titolo rispetto a prima"
+      "title": "Il sottotitolo è più distanziato dal blocco titolo rispetto a prima",
+      "tasks": [
+        "T010",
+        "T011"
+      ]
     },
     "FR-011": {
-      "title": "Il sottotitolo è allineato al centro"
+      "title": "Il sottotitolo è allineato al centro",
+      "tasks": [
+        "T002",
+        "T010",
+        "T011"
+      ]
     },
     "FR-012": {
-      "title": "Il pulsante CTA ha testo in inglese"
+      "title": "Il pulsante CTA ha testo in inglese",
+      "tasks": [
+        "T009",
+        "T011"
+      ]
     },
     "FR-013": {
-      "title": "Il pulsante è subito sotto il sottotitolo e centrato"
+      "title": "Il pulsante è subito sotto il sottotitolo e centrato",
+      "tasks": [
+        "T010",
+        "T011"
+      ]
     },
     "FR-014": {
-      "title": "Il pulsante continua a portare alla sezione progetti"
+      "title": "Il pulsante continua a portare alla sezione progetti",
+      "tasks": [
+        "T009",
+        "T011"
+      ]
     },
     "FR-015": {
-      "title": "Nessun altro testo del sito viene modificato o tradotto"
+      "title": "Nessun altro testo del sito viene modificato o tradotto",
+      "tasks": [
+        "T014"
+      ]
     },
     "FR-016": {
-      "title": "Nessuna sezione aggiunta, rimossa o ristrutturata oltre a header e hero"
+      "title": "Nessuna sezione aggiunta, rimossa o ristrutturata oltre a header e hero",
+      "tasks": [
+        "T014"
+      ]
     },
     "FR-017": {
-      "title": "Header e hero leggibili e senza scorrimento orizzontale da 320px in su"
+      "title": "Header e hero leggibili e senza scorrimento orizzontale da 320px in su",
+      "tasks": [
+        "T007",
+        "T012"
+      ]
     },
     "FR-018": {
-      "title": "Contrasto e navigabilità da tastiera preservati sugli elementi modificati"
+      "title": "Contrasto e navigabilità da tastiera preservati sugli elementi modificati",
+      "tasks": [
+        "T007",
+        "T013",
+        "T015"
+      ]
     }
   },
   "size": "normal",
@@ -160,6 +388,16 @@
       "decision": "Nessun data-model.md prodotto",
       "why": "La feature non introduce ne rimodella entita: non tocca dati, schema o content collection, e la spec stessa omette Key Entities. Un documento di sole diciture N/A aggiungerebbe rumore",
       "rejected": "Produrre data-model.md vuoto per completezza formale"
+    },
+    {
+      "decision": "Spazi espliciti fra i tre span del titolo",
+      "why": "Il compilatore Astro rimuove lo spazio bianco fra elementi adiacenti: senza separatori il testo concatenato diventa \"The pathfrom noise...\". Chrome inserisce gia lo spazio calcolando il nome accessibile, ma cosi la lettura corretta non dipende dallimplementazione del browser",
+      "rejected": "Affidarsi allaccname computation del browser; fra box di blocco lo spazio viene collassato, quindi il costo visivo e nullo"
+    },
+    {
+      "decision": "Riga 3 del titolo a font-weight 500 e text-wrap balance",
+      "why": "Il peso ridotto rinforza la gerarchia oltre alla sola dimensione, e balance evita che la riga piu lunga si spezzi in modo sbilanciato su viewport intermedi",
+      "rejected": "Colorare la riga 3 con --color-text-muted: si sarebbe confusa con il sottotitolo subito sotto, gia muted"
     }
   ],
   "approach": "Modifica confinata al livello di presentazione di due componenti Astro esistenti (BaseLayout.astro, Hero.astro): copy inglese, blocco titolo come unico h1 con tre righe interne, dimensioni delle righe 2 e 3 derivate in em dal titolo per garantire la decrescenza a ogni viewport, spaziatura dai token esistenti di global.css. Nessuna dipendenza nuova, nessun token nuovo, nessun colore cambiato; verifica tramite gli scenari di quickstart.md eseguiti con Playwright/axe senza suite versionata.",
@@ -167,6 +405,137 @@
     "plan": {
       "summary": "Piano per la riscrittura inglese di header e hero: due file sorgente, nessuna dipendenza nuova, 7 decisioni di ricerca, contratto UI con 16 invarianti verificabili e 6 scenari di validazione.",
       "key_finding": "Tre clamp() indipendenti per le tre righe del titolo potrebbero incrociarsi a viewport intermedi e invertire la gerarchia richiesta da SC-003 senza che i breakpoint testati lo rivelino: ancorare le righe 2 e 3 in em al font-size dellh1 rende la decrescenza vera per costruzione."
+    },
+    "tasks": {
+      "summary": "15 task in 6 fasi (Setup, Foundational, una fase per ciascuna delle 3 user story, Polish); parallelismo reale solo fra il ramo BaseLayout.astro (US2) e il ramo Hero.astro, piu la wave di validazione finale."
+    },
+    "implement": {
+      "summary": "Header e hero riscritti in inglese: blocco titolo a tre righe con scala em-based centrata, intestazione con brand esteso e nav che va a capo, sottotitolo distanziato e CTA tradotta. 15/15 task, 0 violazioni axe."
     }
-  }
+  },
+  "currentTask": "T015",
+  "task_summaries": {
+    "T001": {
+      "status": "DONE",
+      "did": "Baseline pre-modifica misurata su build di produzione: 0 violazioni axe su / e /about, gap titolo-sottotitolo 16px, nessun overflow orizzontale da 320 a 1920px, 1 solo h1"
+    },
+    "T002": {
+      "status": "DONE",
+      "did": "Contenitore .hero__inner centrato (text-align: center, margin-inline: auto) e ampliato da 42rem a 56rem per accogliere la riga 3 del titolo su una riga",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T003": {
+      "status": "DONE",
+      "did": "Rimosso p.hero__eyebrow (markup e regola di stile) e sostituito il contenuto dell'h1 con tre span a blocco: The path / from noise to harmony / Machine Learning, SQL and Data Visualization applied to real life.",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T004": {
+      "status": "DONE",
+      "did": "Scala tipografica em-based: font-size clamp(2rem,7vw,4.5rem) sull'h1, riga 2 a 0.72em, riga 3 a max(1.05rem, 0.3em) con stacco margin-top var(--space-md); decrescenza garantita a ogni larghezza",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T005": {
+      "status": "DONE",
+      "did": "Scenario 1 superato su 9 larghezze (320-1920): 1 solo h1, tre righe nell'ordine corretto, dimensioni sempre decrescenti, stacco 24px > 0px, allineamento center, nessun overflow, eyebrow assente dal DOM. Corretto lo spazio mancante fra gli span (spazi espliciti) perche' il compilatore lo rimuoveva",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T006": {
+      "status": "DONE",
+      "did": "Brand dell'intestazione sostituito con la stringa verbatim 'Valerio Quaranta - A Data Science Hub' (trattino semplice), href=/ e raggiungibilita' da tastiera invariati",
+      "files": [
+        "src/layouts/BaseLayout.astro"
+      ]
+    },
+    "T007": {
+      "status": "DONE",
+      "did": "Barra di navigazione resa tollerante alla stringa piu' lunga: flex-wrap wrap con gap verticale sulla .site-nav e font-size fluido clamp(0.9rem,3.2vw,1rem) sul brand; nessun troncamento",
+      "files": [
+        "src/layouts/BaseLayout.astro"
+      ]
+    },
+    "T008": {
+      "status": "DONE",
+      "did": "Scenario 2 superato su / e /about a 320/375/768/1280: brand verbatim corretto, href=/, nessun troncamento ne' sovrapposizione con i link, wrap su due righe a 320/375 come progettato, focus da tastiera sul brand con anello 3px solid"
+    },
+    "T009": {
+      "status": "DONE",
+      "did": "Sottotitolo e CTA tradotti in inglese ('An end-to-end project portfolio - from data extraction to modeling, all the way to communicating results.' / 'View Projects'); href=#progetti lasciato invariato",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T010": {
+      "status": "DONE",
+      "did": "Distanza titolo-sottotitolo portata da --space-sm (16px) a --space-lg (40px); sottotitolo con max-width 38rem propria e margin-inline auto per una misura tipografica leggibile; CTA centrata subito sotto",
+      "files": [
+        "src/components/landing/Hero.astro"
+      ]
+    },
+    "T011": {
+      "status": "DONE",
+      "did": "Scenario 3 superato sui tre viewport: gap titolo-sottotitolo 40px (>16px baseline), sottotitolo centrato, CTA elemento immediatamente successivo e centrata, click sulla CTA porta #progetti nel viewport"
+    },
+    "T012": {
+      "status": "DONE",
+      "did": "Scenario 4 superato: riga1/riga2/riga3, sottotitolo e CTA tutti above-the-fold a 1280x800 senza scorrere; nessun overflow orizzontale su 10 larghezze da 320 a 1920; gerarchia decrescente preservata a zoom 200%; zero errori console"
+    },
+    "T013": {
+      "status": "DONE",
+      "did": "Scenario 5 superato: 0 violazioni axe su / e /about (pari alla baseline T001), nome accessibile dell'h1 corretto con spazi fra le tre righe, 1 solo h1, nessun nodo vuoto dovuto allo stacco (i 2 nodi rilevati sono i separatori di spazio deliberati)"
+    },
+    "T014": {
+      "status": "DONE",
+      "did": "Scenario 6 superato dopo correzione: git diff su src/ elenca solo Hero.astro e BaseLayout.astro, copy italiano di skip link/nav/progetti/footer invariato, lint e build puliti. Trovati e rimossi dal versionamento 7 file .pyc entrati per errore nel commit di tooling",
+      "files": [
+        ".gitignore"
+      ]
+    },
+    "T015": {
+      "status": "DONE",
+      "did": "Constitution Check ri-verificato sul risultato reale: I Data-First PASS (nessun dato di progetto toccato), II Scalabilita' PASS (sola presentazione, nessun accoppiamento nuovo), III Professionalita' Creativa PASS (0 violazioni axe, nessun colore cambiato, focus ring 3px verificato, h1 unico, nessun overflow, gerarchia tenuta a zoom 200%)"
+    }
+  },
+  "verified": [
+    {
+      "what": "Gerarchia tipografica decrescente su 9 larghezze (320,375,480,600,768,900,1100,1280,1920)",
+      "command": "playwright: misura getComputedStyle().fontSize delle tre righe",
+      "result": "decrescente a tutte le larghezze; nessun incrocio, la derivazione in em regge per costruzione"
+    },
+    {
+      "what": "Accessibilita axe-core su / e /about",
+      "command": "@axe-core/playwright AxeBuilder.analyze()",
+      "result": "0 violazioni su entrambe, pari alla baseline T001",
+      "warnings": [
+        "Il conteggio dei nodi di testo vuoti nell h1 riporta 2: sono i due separatori di spazio deliberati, non nodi vuoti — predicato di controllo troppo severo, non un difetto"
+      ]
+    },
+    {
+      "what": "Confine di scope e qualita del codice",
+      "command": "git diff --name-only -- src/ ; npm run lint ; npm run build",
+      "result": "solo Hero.astro e BaseLayout.astro modificati; lint 15 file 0 problemi; build 2 pagine OK"
+    },
+    {
+      "what": "Reattivita e assenza di overflow orizzontale",
+      "command": "playwright: scrollWidth vs clientWidth su 10 larghezze 320-1920 + zoom 200%",
+      "result": "nessun overflow a nessuna larghezza; gerarchia preservata a zoom 200%; zero errori console"
+    }
+  ],
+  "concerns": [
+    {
+      "note": "7 file .pyc degli script Companion erano finiti nel commit chore(tooling) e mostravano gia churn di contenuto a parita di dimensione. Rimossi dal versionamento e aggiunti a .gitignore insieme a .spec-context.events.jsonl. La correzione tocca .gitignore, quindi va in un commit di housekeeping separato dal commit della feature per non violare SC-009",
+      "step": "implement"
+    },
+    {
+      "note": "Titolo della scheda del browser e attributo lang restano in italiano: conseguenza voluta del confine di scope, gia tracciata in research.md e TODO.local.md per la spec di traduzione",
+      "step": "implement"
+    }
+  ]
 }
