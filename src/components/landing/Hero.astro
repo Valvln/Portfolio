@@ -5,16 +5,24 @@ import Reveal from 'astro-reveal/Reveal.astro';
 <section class="hero">
   <div class="container hero__inner">
     <Reveal animation="up">
-      <p class="hero__eyebrow">Valerio Quaranta — Data Scientist Junior</p>
       <h1 class="hero__title">
-        Trasformo dati grezzi in decisioni: SQL, Machine Learning e Data Visualization applicati a
-        problemi reali.
+        {/* Gli spazi espliciti fra gli span sono deliberati: il compilatore
+            rimuove lo spazio bianco fra elementi adiacenti, e senza di essi il
+            testo concatenato diventa "The pathfrom noise…". Chrome inserisce
+            già lo spazio calcolando il nome accessibile, ma così la lettura
+            corretta non dipende dall'implementazione del browser. Fra box di
+            blocco lo spazio viene collassato: nessun effetto visivo. */}
+        <span class="hero__title-lead">The path</span>{' '}
+        <span class="hero__title-sub">from noise to harmony</span>{' '}
+        <span class="hero__title-claim">
+          Machine Learning, SQL and Data Visualization applied to real life.
+        </span>
       </h1>
       <p class="hero__subtitle">
-        Portfolio di progetti end-to-end — dall'estrazione dati alla modellazione, fino alla
-        comunicazione dei risultati.
+        An end-to-end project portfolio — from data extraction to modeling, all the way to
+        communicating results.
       </p>
-      <a href="#progetti" class="hero__cta">Guarda i progetti</a>
+      <a href="#progetti" class="hero__cta">View Projects</a>
     </Reveal>
   </div>
 </section>
@@ -26,29 +34,58 @@ import Reveal from 'astro-reveal/Reveal.astro';
     background: linear-gradient(180deg, var(--color-surface), var(--color-bg));
   }
 
+  /* L'allineamento vive sul genitore del wrapper `Reveal`: l'ereditarietà
+     attraversa il nodo generato dalla libreria, quindi la centratura resta
+     corretta anche se astro-reveal cambia elemento (plan.md, decisione R3). */
   .hero__inner {
-    max-width: 42rem;
+    max-width: 56rem;
+    margin-inline: auto;
+    text-align: center;
   }
 
-  .hero__eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 0 0 var(--space-xs);
-  }
-
+  /* La dimensione è dichiarata una sola volta qui: le righe 2 e 3 la derivano
+     in `em`, quindi il rapporto fra le tre righe è costante a QUALSIASI
+     larghezza. Tre clamp() indipendenti, ciascuna con il proprio coefficiente
+     vw, potrebbero incrociarsi a viewport intermedi e invertire la gerarchia
+     senza che i breakpoint provati lo rivelino (plan.md, decisione R2). */
   .hero__title {
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
-    line-height: 1.2;
-    margin: 0 0 var(--space-sm);
+    font-size: clamp(2rem, 7vw, 4.5rem);
+    line-height: 1.1;
+    /* Da --space-sm (16px, valore precedente) a --space-lg: il sottotitolo
+       stacca dal blocco titolo invece di appoggiarvisi (FR-010). */
+    margin: 0 0 var(--space-lg);
   }
 
+  .hero__title-lead,
+  .hero__title-sub,
+  .hero__title-claim {
+    display: block;
+  }
+
+  .hero__title-sub {
+    font-size: 0.72em;
+  }
+
+  /* Lo stacco prima della riga 3 è spaziatura, non una riga di testo vuota:
+     un nodo vuoto verrebbe annunciato dagli screen reader. `max()` impedisce
+     che il rapporto fisso renda la riga illeggibile quando l'h1 scende al suo
+     minimo su mobile, restando comunque ben sotto la riga 2. */
+  .hero__title-claim {
+    font-size: max(1.05rem, 0.3em);
+    font-weight: 500;
+    line-height: 1.4;
+    text-wrap: balance;
+    margin-top: var(--space-md);
+  }
+
+  /* Larghezza propria, più stretta del blocco titolo: centrato su una riga
+     larga quanto il titolo il sottotitolo perderebbe leggibilità (misura
+     tipografica eccessiva — plan.md, decisione R3). */
   .hero__subtitle {
+    max-width: 38rem;
+    margin: 0 auto var(--space-md);
     color: var(--color-text-muted);
     font-size: 1.125rem;
-    margin: 0 0 var(--space-md);
   }
 
   .hero__cta {

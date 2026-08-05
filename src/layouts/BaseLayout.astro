@@ -34,7 +34,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 
     <header class="site-header">
       <nav class="container site-nav" aria-label="Navigazione principale">
-        <a href="/" class="site-nav__brand">Data Scientist Junior</a>
+        <a href="/" class="site-nav__brand">Valerio Quaranta - A Data Science Hub</a>
         <ul class="site-nav__links">
           <li><a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a></li>
           <li>
@@ -77,14 +77,22 @@ const currentPath = new URL(Astro.request.url).pathname;
         z-index: 10;
       }
 
+      /* `wrap` non è cosmetico: il brand è passato da 21 a 37 caratteri e a
+         320px il contenitore lascia ~272px utili, che il solo brand riempie
+         già. Senza andare a capo, brand e collegamenti si comprimerebbero a
+         vicenda. Nessun troncamento: il testo dell'intestazione va letto per
+         intero (plan.md, decisione R5). */
       .site-nav {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        gap: var(--space-xs) var(--space-sm);
         padding-block: var(--space-sm);
       }
 
       .site-nav__brand {
+        font-size: clamp(0.9rem, 3.2vw, 1rem);
         font-weight: 700;
         text-decoration: none;
         color: var(--color-text);
