@@ -27,3 +27,10 @@ dist/
 coverage/
 test-results/
 playwright-report/
+
+# Python bytecode degli script SpekKit Companion
+__pycache__/
+*.pyc
+
+# Log di append transitorio del Companion (viene ripiegato in .spec-context.json)
+.spec-context.events.jsonl
