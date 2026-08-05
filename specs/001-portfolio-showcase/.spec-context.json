@@ -3,7 +3,44 @@
   "specName": "001-portfolio-showcase",
   "branch": "001-portfolio-showcase",
   "selectedAt": "2026-07-18T09:38:13.261Z",
-  "currentStep": "specify",
-  "status": "draft",
-  "history": []
+  "currentStep": "implement",
+  "status": "completed",
+  "history": [
+    {
+      "step": "implement",
+      "substep": null,
+      "task": "T044",
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T22:05:49.802Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "kind": "start",
+      "by": "ai",
+      "at": "2026-08-05T22:06:01.270Z"
+    },
+    {
+      "step": "implement",
+      "substep": null,
+      "kind": "complete",
+      "by": "ai",
+      "at": "2026-08-05T22:06:01.513Z"
+    }
+  ],
+  "currentTask": "T044",
+  "task_summaries": {
+    "T044": {
+      "status": "DONE",
+      "did": "Deploy e validazione live completati il 2026-07-19 in PRODUZIONE anziche' in preview: sito pubblico su valerio-quaranta.vercel.app, scenari quickstart 26/26 con Playwright e Lighthouse 100/100/100/100 su entrambe le pagine. Casella spuntata a posteriori in fase di riconciliazione del contesto"
+    }
+  },
+  "last_action": "BACKFILL 2026-08-06: la 001 fu realizzata (16-19 luglio 2026) prima che il Companion fosse installato, quindi nessun hook di ciclo di vita scrisse mai questo file. Stato riconciliato a posteriori sulla base delle evidenze reali (43/44 task gia' spuntati, sito live e validato). I 3 eventi in history portano la data della riconciliazione, NON quella del lavoro.",
+  "concerns": [
+    {
+      "note": "I timestamp in history sono del 2026-08-06, data della riconciliazione, non del lavoro reale (16-19 luglio 2026). Il file non contiene la cronologia autentica della 001 perche gli hook Companion non esistevano allepoca: e una ricostruzione dello stato finale, non della storia",
+      "step": "implement"
+    }
+  ]
 }
