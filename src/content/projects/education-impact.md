@@ -11,7 +11,7 @@ githubUrl: 'https://github.com/Valvln/project_data_manipulation'
 linkedinUrl: 'https://www.linkedin.com/in/valerio-quaranta-873a512ba/'
 pdfPresentation:
   file: '/pdf/education-impact.pdf'
-  label: 'Visualizza presentazione'
+  label: 'View presentation'
 order: 3
 ---
 

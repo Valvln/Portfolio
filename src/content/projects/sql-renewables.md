@@ -11,7 +11,7 @@ githubUrl: 'https://github.com/Valvln/progetto_sql'
 linkedinUrl: 'https://www.linkedin.com/in/valerio-quaranta-873a512ba/'
 pdfPresentation:
   file: '/pdf/sql-renewables.pdf'
-  label: 'Visualizza presentazione'
+  label: 'View presentation'
 order: 2
 ---
 

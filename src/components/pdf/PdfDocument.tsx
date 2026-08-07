@@ -26,7 +26,7 @@ export default function PdfDocument({ fileUrl, projectTitle }: Props) {
 
   return (
     <>
-      {loadError && <p role="alert">Impossibile caricare la presentazione: {loadError}</p>}
+      {loadError && <p role="alert">Could not load the presentation: {loadError}</p>}
       <Document
         file={fileUrl}
         onLoadSuccess={({ numPages: n }) => {
@@ -36,7 +36,7 @@ export default function PdfDocument({ fileUrl, projectTitle }: Props) {
         onLoadError={(error) => setLoadError(error.message)}
         loading={
           <p className="pdf-viewer__loading" role="status">
-            Caricamento presentazione «{projectTitle}» in corso…
+            Loading presentation “{projectTitle}”…
           </p>
         }
       >
@@ -50,17 +50,17 @@ export default function PdfDocument({ fileUrl, projectTitle }: Props) {
             disabled={pageNumber <= 1}
             onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
           >
-            ← Precedente
+            ← Previous
           </button>
           <span>
-            Pagina {pageNumber} di {numPages}
+            Page {pageNumber} of {numPages}
           </span>
           <button
             type="button"
             disabled={pageNumber >= numPages}
             onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
           >
-            Successiva →
+            Next →
           </button>
         </div>
       )}

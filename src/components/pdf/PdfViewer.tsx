@@ -19,7 +19,7 @@ interface Props {
 export default function PdfViewer({ fileUrl, label, projectTitle }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const fileName = fileUrl.split('/').pop() ?? 'presentazione.pdf';
+  const fileName = fileUrl.split('/').pop() ?? 'presentation.pdf';
 
   return (
     <div className="pdf-viewer">
@@ -30,14 +30,14 @@ export default function PdfViewer({ fileUrl, label, projectTitle }: Props) {
           aria-expanded={isOpen}
           onClick={() => setIsOpen((open) => !open)}
         >
-          {isOpen ? 'Chiudi presentazione' : label}
+          {isOpen ? 'Close presentation' : label}
         </button>
         <a
           href={fileUrl}
           download={fileName}
           className="pdf-viewer__button pdf-viewer__button--secondary"
         >
-          Scarica PDF
+          Download PDF
         </a>
       </div>
 
@@ -53,7 +53,7 @@ export default function PdfViewer({ fileUrl, label, projectTitle }: Props) {
             <Suspense
               fallback={
                 <p className="pdf-viewer__loading" role="status">
-                  Caricamento presentazione «{projectTitle}» in corso…
+                  Loading presentation “{projectTitle}”…
                 </p>
               }
             >

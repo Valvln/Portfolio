@@ -11,7 +11,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,10 +30,10 @@ const currentPath = new URL(Astro.request.url).pathname;
     <meta name="twitter:card" content="summary" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="site-header">
-      <nav class="container site-nav" aria-label="Navigazione principale">
+      <nav class="container site-nav" aria-label="Main navigation">
         <a href="/" class="site-nav__brand">Valerio Quaranta - A Data Science Hub</a>
         <ul class="site-nav__links">
           <li><a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Home</a></li>
@@ -50,7 +50,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; {new Date().getFullYear()} — Portfolio Data Scientist Junior</p>
+        <p>&copy; {new Date().getFullYear()} — Junior Data Scientist Portfolio</p>
       </div>
     </footer>
 

@@ -12,7 +12,7 @@ githubUrl: 'https://github.com/Valvln/Project-Water-Safety-AI'
 linkedinUrl: 'https://www.linkedin.com/in/valerio-quaranta-873a512ba/'
 pdfPresentation:
   file: '/pdf/water-safety-ai.pdf'
-  label: 'Visualizza presentazione'
+  label: 'View presentation'
 order: 1
 ---
 

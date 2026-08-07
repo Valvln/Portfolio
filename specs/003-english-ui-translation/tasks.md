@@ -34,7 +34,7 @@ Fissare i due riferimenti contro cui si misura l'avanzamento e la non regression
 
 **Wave 1 — task singolo:**
 
-- [ ] **T001** Registrare la baseline pre-modifica: eseguire lo sweep dello scenario 0 di `quickstart.md` e annotare il conteggio (atteso **32 righe** su `main`), poi `npm run build && npm run preview` e una scansione `@axe-core/playwright` su `/` e `/about`, annotando il numero di violazioni come riferimento per SC-006 · nessun file modificato
+- [x] **T001** Registrare la baseline pre-modifica: eseguire lo sweep dello scenario 0 di `quickstart.md` e annotare il conteggio (atteso **32 righe** su `main`), poi `npm run build && npm run preview` e una scansione `@axe-core/playwright` su `/` e `/about`, annotando il numero di violazioni come riferimento per SC-006 · nessun file modificato
 
 **⟶ Attendere T001, poi:**
 
@@ -62,21 +62,21 @@ dell'hero vi porti, e che `Tab` dall'inizio del documento riveli `Skip to main c
 
 **Wave 1 — due file indipendenti:**
 
-- [ ] **T002** [P] [US1] Tradurre le tre stringhe dell'impalcatura secondo §1 del contratto UI: collegamento di salto → `Skip to main content`, `aria-label` della `<nav>` → `Main navigation`, testo del piè di pagina → `Junior Data Scientist Portfolio`. Lasciare invariati brand, collegamenti `Home`/`About`, simbolo `©` e anno dinamico. **Non toccare `<html lang>`**, che è T017 (FR-001, FR-002, FR-003, FR-004, FR-005) · `src/layouts/BaseLayout.astro`
+- [x] **T002** [P] [US1] Tradurre le tre stringhe dell'impalcatura secondo §1 del contratto UI: collegamento di salto → `Skip to main content`, `aria-label` della `<nav>` → `Main navigation`, testo del piè di pagina → `Junior Data Scientist Portfolio`. Lasciare invariati brand, collegamenti `Home`/`About`, simbolo `©` e anno dinamico. **Non toccare `<html lang>`**, che è T017 (FR-001, FR-002, FR-003, FR-004, FR-005) · `src/layouts/BaseLayout.astro`
 
-- [ ] **T003** [P] [US1] Tradurre il titolo di sezione in `Projects` e rinominare **tutti e tre** gli identificatori nello stesso passaggio — `id` della `<section>` da `progetti` a `projects`, `aria-labelledby` della `<section>` e `id` dell'`<h2>` da `progetti-heading` a `projects-heading`. Rinominarne solo una parte fa perdere alla sezione il nome accessibile senza errori di build (research R2) (FR-006, FR-007) · `src/components/projects/ProjectGrid.astro`
+- [x] **T003** [P] [US1] Tradurre il titolo di sezione in `Projects` e rinominare **tutti e tre** gli identificatori nello stesso passaggio — `id` della `<section>` da `progetti` a `projects`, `aria-labelledby` della `<section>` e `id` dell'`<h2>` da `progetti-heading` a `projects-heading`. Rinominarne solo una parte fa perdere alla sezione il nome accessibile senza errori di build (research R2) (FR-006, FR-007) · `src/components/projects/ProjectGrid.astro`
 
 **⟶ Attendere T003 (l'`href` deve puntare a un `id` che esiste già), poi:**
 
 **Wave 2 — task singolo:**
 
-- [ ] **T004** [US1] Aggiornare l'`href` della CTA dell'hero da `#progetti` a `#projects`. **Nient'altro in questo file**: titolo a tre righe, sottotitolo, testo del pulsante e stili scoped sono copy pinnato dalla spec 002 (FR-008, FR-009) · `src/components/landing/Hero.astro`
+- [x] **T004** [US1] Aggiornare l'`href` della CTA dell'hero da `#progetti` a `#projects`. **Nient'altro in questo file**: titolo a tre righe, sottotitolo, testo del pulsante e stili scoped sono copy pinnato dalla spec 002 (FR-008, FR-009) · `src/components/landing/Hero.astro`
 
 **⟶ Attendere T004, poi:**
 
 **Wave 3 — validazione:**
 
-- [ ] **T005** [US1] Eseguire gli scenari 1 e 2 di `quickstart.md`: ancora e CTA funzionanti, `#progetti` inesistente, `aria-labelledby` che risolve a un elemento con testo `Projects` (INV-04, il controllo che intercetta la regressione silenziosa), collegamento di salto e navigazione da tastiera su `/` e `/about` · nessun file modificato
+- [x] **T005** [US1] Eseguire gli scenari 1 e 2 di `quickstart.md`: ancora e CTA funzionanti, `#progetti` inesistente, `aria-labelledby` che risolve a un elemento con testo `Projects` (INV-04, il controllo che intercetta la regressione silenziosa), collegamento di salto e navigazione da tastiera su `/` e `/about` · nessun file modificato
 
 **⟶ Attendere T005, poi:**
 
@@ -94,23 +94,23 @@ pagine e scaricarla, senza incontrare testo italiano.
 
 **Wave 1 — sei file indipendenti, tutti parallelizzabili:**
 
-- [ ] **T006** [P] [US2] Tradurre secondo §6 del contratto UI: `aria-label` del gruppo tag → `Technology tags`, e **entrambe** le occorrenze di `(apre in una nuova scheda)` → `(opens in a new tab)` (GitHub e LinkedIn). Lasciare invariate le etichette `SQL`, `ML`, `Viz`, `Python` e i nomi `GitHub`/`LinkedIn` (FR-012, FR-013, FR-030) · `src/components/projects/ProjectCard.astro`
+- [x] **T006** [P] [US2] Tradurre secondo §6 del contratto UI: `aria-label` del gruppo tag → `Technology tags`, e **entrambe** le occorrenze di `(apre in una nuova scheda)` → `(opens in a new tab)` (GitHub e LinkedIn). Lasciare invariate le etichette `SQL`, `ML`, `Viz`, `Python` e i nomi `GitHub`/`LinkedIn` (FR-012, FR-013, FR-030) · `src/components/projects/ProjectCard.astro`
 
-- [ ] **T007** [P] [US2] Tradurre secondo §7 del contratto UI: etichetta `Tutti` → `All` e `aria-label` del gruppo → `Filter projects by tag`. **Non toccare i cinque `value`** (`all`, `sql`, `ml`, `viz`, `python`): sono chiavi di dato confrontate con `data-tags` renderizzato da `ProjectCard`, e modificarle rompe il filtro (FR-010, FR-011, FR-030) · `src/components/projects/TagFilter.tsx`
+- [x] **T007** [P] [US2] Tradurre secondo §7 del contratto UI: etichetta `Tutti` → `All` e `aria-label` del gruppo → `Filter projects by tag`. **Non toccare i cinque `value`** (`all`, `sql`, `ml`, `viz`, `python`): sono chiavi di dato confrontate con `data-tags` renderizzato da `ProjectCard`, e modificarle rompe il filtro (FR-010, FR-011, FR-030) · `src/components/projects/TagFilter.tsx`
 
-- [ ] **T008** [P] [US2] Tradurre le quattro stringhe di §8 del contratto UI: `Close presentation`, `Download PDF`, nome file di riserva `presentation.pdf`, e il messaggio di caricamento `Loading presentation “{projectTitle}”…` con **virgolette tipografiche** `“ ”` al posto dei caporali, inserite come carattere letterale e non come entità HTML (research R7) (FR-015, FR-016, FR-017, FR-018) · `src/components/pdf/PdfViewer.tsx`
+- [x] **T008** [P] [US2] Tradurre le quattro stringhe di §8 del contratto UI: `Close presentation`, `Download PDF`, nome file di riserva `presentation.pdf`, e il messaggio di caricamento `Loading presentation “{projectTitle}”…` con **virgolette tipografiche** `“ ”` al posto dei caporali, inserite come carattere letterale e non come entità HTML (research R7) (FR-015, FR-016, FR-017, FR-018) · `src/components/pdf/PdfViewer.tsx`
 
-- [ ] **T009** [P] [US2] Tradurre le cinque stringhe di §9 del contratto UI: messaggio di caricamento **identico** a quello di T008, `Could not load the presentation: {loadError}`, `← Previous`, `Page {pageNumber} of {numPages}`, `Next →`. Frecce e valori interpolati restano dove sono. Il messaggio di caricamento è duplicato per costruzione: allinearlo, non estrarlo in costante condivisa (research R5) (FR-018, FR-019, FR-020) · `src/components/pdf/PdfDocument.tsx`
+- [x] **T009** [P] [US2] Tradurre le cinque stringhe di §9 del contratto UI: messaggio di caricamento **identico** a quello di T008, `Could not load the presentation: {loadError}`, `← Previous`, `Page {pageNumber} of {numPages}`, `Next →`. Frecce e valori interpolati restano dove sono. Il messaggio di caricamento è duplicato per costruzione: allinearlo, non estrarlo in costante condivisa (research R5) (FR-018, FR-019, FR-020) · `src/components/pdf/PdfDocument.tsx`
 
-- [ ] **T010** [P] [US2] Tradurre `pdfPresentation.label` da `Visualizza presentazione` a `View presentation` nei cinque contenuti di progetto. **Una sola riga di diff per file**: `title`, `description`, `tags`, `file`, URL e corpo restano intatti — è l'unica eccezione consentita al confine con la spec 004 (FR-023, FR-028) · `src/content/projects/{diabetes-ml,education-impact,sql-renewables,travel-sge,water-safety-ai}.md`
+- [x] **T010** [P] [US2] Tradurre `pdfPresentation.label` da `Visualizza presentazione` a `View presentation` nei cinque contenuti di progetto. **Una sola riga di diff per file**: `title`, `description`, `tags`, `file`, URL e corpo restano intatti — è l'unica eccezione consentita al confine con la spec 004 (FR-023, FR-028) · `src/content/projects/{diabetes-ml,education-impact,sql-renewables,travel-sge,water-safety-ai}.md`
 
-- [ ] **T011** [P] [US2] Tradurre il valore di riserva dell'etichetta PDF da `'Visualizza presentazione'` a `'View presentation'`. Non è codice morto: `label` è `.optional()` nello schema Zod, quindi il valore entra in gioco per ogni progetto futuro che ometta il campo (research R3) (FR-014) · `src/components/projects/ProjectGrid.astro`
+- [x] **T011** [P] [US2] Tradurre il valore di riserva dell'etichetta PDF da `'Visualizza presentazione'` a `'View presentation'`. Non è codice morto: `label` è `.optional()` nello schema Zod, quindi il valore entra in gioco per ogni progetto futuro che ometta il campo (research R3) (FR-014) · `src/components/projects/ProjectGrid.astro`
 
 **⟶ Attendere T006…T011, poi:**
 
 **Wave 2 — validazione:**
 
-- [ ] **T012** [US2] Eseguire gli scenari 3 e 4 di `quickstart.md`: filtro `All` funzionante e ancora capace di filtrare, etichette accessibili in inglese, ciclo completo del viewer PDF (apertura, caricamento, paginazione, download, chiusura) e percorso di errore · nessun file modificato
+- [x] **T012** [US2] Eseguire gli scenari 3 e 4 di `quickstart.md`: filtro `All` funzionante e ancora capace di filtrare, etichette accessibili in inglese, ciclo completo del viewer PDF (apertura, caricamento, paginazione, download, chiusura) e percorso di errore · nessun file modificato
 
 **⟶ Attendere T012, poi:**
 
@@ -128,17 +128,17 @@ intestazioni di sezione di About, e attivare il collegamento di contatto.
 
 **Wave 1 — tre file indipendenti:**
 
-- [ ] **T013** [P] [US3] Sostituire `title` e `description` della home con i valori verbatim di §2 del contratto UI. Il trattino del `title` è un **trattino lungo** `—` circondato da spazi (FR-021) · `src/pages/index.astro`
+- [x] **T013** [P] [US3] Sostituire `title` e `description` della home con i valori verbatim di §2 del contratto UI. Il trattino del `title` è un **trattino lungo** `—` circondato da spazi (FR-021) · `src/pages/index.astro`
 
-- [ ] **T014** [P] [US3] Sostituire `title` e `description` della pagina About con i valori verbatim di §3 del contratto UI (FR-021) · `src/pages/about.astro`
+- [x] **T014** [P] [US3] Sostituire `title` e `description` della pagina About con i valori verbatim di §3 del contratto UI (FR-021) · `src/pages/about.astro`
 
-- [ ] **T015** [P] [US3] Tradurre secondo §10 del contratto UI: intestazioni `Skills` e `Contact`, oggetto della mail `Portfolio contact` (tradurre il testo sorgente, non la forma già codificata da `encodeURIComponent`) e `(opens in a new tab)`. Lasciare invariati l'`<h1>` `About`, le emoji, l'indirizzo email e l'URL LinkedIn. **`summary` e `skills` arrivano dalla content collection e non vanno toccati** (FR-013, FR-022, FR-028) · `src/components/about/AboutSection.astro`
+- [x] **T015** [P] [US3] Tradurre secondo §10 del contratto UI: intestazioni `Skills` e `Contact`, oggetto della mail `Portfolio contact` (tradurre il testo sorgente, non la forma già codificata da `encodeURIComponent`) e `(opens in a new tab)`. Lasciare invariati l'`<h1>` `About`, le emoji, l'indirizzo email e l'URL LinkedIn. **`summary` e `skills` arrivano dalla content collection e non vanno toccati** (FR-013, FR-022, FR-028) · `src/components/about/AboutSection.astro`
 
 **⟶ Attendere T013…T015, poi:**
 
 **Wave 2 — validazione:**
 
-- [ ] **T016** [US3] Eseguire gli scenari 5 e 6 di `quickstart.md`: intestazioni di About, oggetto della mail, titoli nella scheda del browser e coerenza fra `title`/`description` e i corrispondenti metadati Open Graph su entrambe le pagine · nessun file modificato
+- [x] **T016** [US3] Eseguire gli scenari 5 e 6 di `quickstart.md`: intestazioni di About, oggetto della mail, titoli nella scheda del browser e coerenza fra `title`/`description` e i corrispondenti metadati Open Graph su entrambe le pagine · nessun file modificato
 
 **⟶ Attendere T016, poi:**
 
@@ -160,13 +160,13 @@ apertura: è l'unica fase il cui ordine relativo non è negoziabile.
 
 **Wave 1 — task singolo:**
 
-- [ ] **T017** [US4] Portare `<html lang="it">` a `<html lang="en">`. **Non aggiungere alcun attributo `lang` ai blocchi di contenuto ancora italiani** — descrizioni delle card, sintesi ed elenco competenze di About: la decisione FR-024 è di non marcarli, e aggiungerli «per sicurezza» contraddirebbe la spec (FR-024, FR-025) · `src/layouts/BaseLayout.astro`
+- [x] **T017** [US4] Portare `<html lang="it">` a `<html lang="en">`. **Non aggiungere alcun attributo `lang` ai blocchi di contenuto ancora italiani** — descrizioni delle card, sintesi ed elenco competenze di About: la decisione FR-024 è di non marcarli, e aggiungerli «per sicurezza» contraddirebbe la spec (FR-024, FR-025) · `src/layouts/BaseLayout.astro`
 
 **⟶ Attendere T017, poi:**
 
 **Wave 2 — validazione:**
 
-- [ ] **T018** [US4] Eseguire lo scenario 7 di `quickstart.md`: `lang` uguale a `en` su entrambe le pagine, `document.querySelectorAll('[lang]').length === 1` (verifica che nessuna marcatura per blocco sia stata introdotta), e passaggio con VoiceOver sull'intestazione e sui titoli di sezione · nessun file modificato
+- [x] **T018** [US4] Eseguire lo scenario 7 di `quickstart.md`: `lang` uguale a `en` su entrambe le pagine, `document.querySelectorAll('[lang]').length === 1` (verifica che nessuna marcatura per blocco sia stata introdotta), e passaggio con VoiceOver sull'intestazione e sui titoli di sezione · nessun file modificato
 
 **⟶ Attendere T018, poi:**
 
@@ -176,17 +176,17 @@ apertura: è l'unica fase il cui ordine relativo non è negoziabile.
 
 **Wave 1 — tre controlli indipendenti, di sola lettura:**
 
-- [ ] **T019** [P] Eseguire lo sweep finale dello scenario 0 di `quickstart.md`. **Atteso: esattamente 3 righe**, e devono essere i tre commenti documentati (`Hero.astro` ~54, `PdfDocument.tsx` ~19, `PdfViewer.tsx` ~5). Qualsiasi quarta riga è una stringa dimenticata. Verificare inoltre che non sia stato introdotto alcun modulo di stringhe o dipendenza di internazionalizzazione (SC-001, FR-009, FR-026) · nessun file modificato
+- [x] **T019** [P] Eseguire lo sweep finale dello scenario 0 di `quickstart.md`. **Atteso: esattamente 3 righe**, e devono essere i tre commenti documentati (`Hero.astro` ~54, `PdfDocument.tsx` ~19, `PdfViewer.tsx` ~5). Qualsiasi quarta riga è una stringa dimenticata. Verificare inoltre che non sia stato introdotto alcun modulo di stringhe o dipendenza di internazionalizzazione (SC-001, FR-009, FR-026) · nessun file modificato
 
-- [ ] **T020** [P] Verificare il confine con la spec 004: `git diff --stat src/content/` deve mostrare **cinque** file modificati con **5 inserimenti e 5 rimozioni** in totale, e `src/content/about/about.md` deve essere assente dal diff (SC-008, FR-028) · nessun file modificato
+- [x] **T020** [P] Verificare il confine con la spec 004: `git diff --stat src/content/` deve mostrare **cinque** file modificati con **5 inserimenti e 5 rimozioni** in totale, e `src/content/about/about.md` deve essere assente dal diff (SC-008, FR-028) · nessun file modificato
 
-- [ ] **T021** [P] Eseguire `npm run build` e `npx astro check`: entrambi devono completare senza errori né avvisi nuovi rispetto alla baseline di T001 (FR-027) · nessun file modificato
+- [x] **T021** [P] Eseguire `npm run build` e `npx astro check`: entrambi devono completare senza errori né avvisi nuovi rispetto alla baseline di T001 (FR-027) · nessun file modificato
 
 **⟶ Attendere T019…T021, poi:**
 
 **Wave 2 — task singolo:**
 
-- [ ] **T022** Eseguire lo scenario 8 di `quickstart.md` ai viewport 375×812, 768×1024 e 1280×800, più un controllo a 320px: assenza di scorrimento orizzontale, nessuna etichetta troncata o sovrapposta, e scansione axe su `/` e `/about` senza violazioni nuove rispetto alla baseline di T001 (SC-006, SC-007, FR-027, FR-029) · nessun file modificato
+- [x] **T022** Eseguire lo scenario 8 di `quickstart.md` ai viewport 375×812, 768×1024 e 1280×800, più un controllo a 320px: assenza di scorrimento orizzontale, nessuna etichetta troncata o sovrapposta, e scansione axe su `/` e `/about` senza violazioni nuove rispetto alla baseline di T001 (SC-006, SC-007, FR-027, FR-029) · nessun file modificato
 
 ---
 

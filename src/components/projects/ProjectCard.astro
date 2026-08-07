@@ -16,7 +16,7 @@ const tagLabels: Record<string, string> = {
 ---
 
 <article class="project-card" data-tags={project.tags.join(',')} data-reveal="up">
-  <div class="project-card__tags" aria-label="Tag tecnologici">
+  <div class="project-card__tags" aria-label="Technology tags">
     {project.tags.map((tag) => <span class={`tag tag--${tag}`}>{tagLabels[tag] ?? tag}</span>)}
   </div>
 
@@ -32,7 +32,7 @@ const tagLabels: Record<string, string> = {
           rel="noopener noreferrer"
           class="project-card__link"
         >
-          GitHub <span class="visually-hidden">(apre in una nuova scheda)</span>
+          GitHub <span class="visually-hidden">(opens in a new tab)</span>
         </a>
       )
     }
@@ -44,7 +44,7 @@ const tagLabels: Record<string, string> = {
           rel="noopener noreferrer"
           class="project-card__link"
         >
-          LinkedIn <span class="visually-hidden">(apre in una nuova scheda)</span>
+          LinkedIn <span class="visually-hidden">(opens in a new tab)</span>
         </a>
       )
     }
