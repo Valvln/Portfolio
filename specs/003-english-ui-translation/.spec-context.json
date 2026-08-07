@@ -3,8 +3,8 @@
   "specName": "003-english-ui-translation",
   "branch": "003-english-ui-translation",
   "selectedAt": "2026-08-07T05:59:23.540Z",
-  "currentStep": "specify",
-  "status": "specified",
+  "currentStep": "plan",
+  "status": "planned",
   "history": [
     {
       "step": "specify",
@@ -12,6 +12,13 @@
       "kind": "start",
       "by": "extension",
       "at": "2026-08-07T06:05:47.987Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "kind": "complete",
+      "by": "extension",
+      "at": "2026-08-07T06:38:21.929Z"
     }
   ]
 }
