@@ -7,9 +7,9 @@ import PdfViewer from '../pdf/PdfViewer';
 const projects = await getProjects();
 ---
 
-<section id="progetti" class="project-grid-section" aria-labelledby="progetti-heading">
+<section id="projects" class="project-grid-section" aria-labelledby="projects-heading">
   <div class="container">
-    <h2 id="progetti-heading">Progetti</h2>
+    <h2 id="projects-heading">Projects</h2>
     <TagFilter client:visible />
 
     <div class="project-grid">
@@ -21,7 +21,7 @@ const projects = await getProjects();
                 <PdfViewer
                   client:visible
                   fileUrl={project.pdfPresentation.file}
-                  label={project.pdfPresentation.label ?? 'Visualizza presentazione'}
+                  label={project.pdfPresentation.label ?? 'View presentation'}
                   projectTitle={project.title}
                 />
               </Fragment>

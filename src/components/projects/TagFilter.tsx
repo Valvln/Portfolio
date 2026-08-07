@@ -3,7 +3,7 @@ import { useState } from 'react';
 type TagValue = 'all' | 'sql' | 'ml' | 'viz' | 'python';
 
 const TAGS: { value: TagValue; label: string }[] = [
-  { value: 'all', label: 'Tutti' },
+  { value: 'all', label: 'All' },
   { value: 'sql', label: 'SQL' },
   { value: 'ml', label: 'ML' },
   { value: 'viz', label: 'Viz' },
@@ -29,7 +29,7 @@ export default function TagFilter() {
   };
 
   return (
-    <div className="tag-filter" role="group" aria-label="Filtra progetti per tag">
+    <div className="tag-filter" role="group" aria-label="Filter projects by tag">
       {TAGS.map(({ value, label }) => (
         <button
           key={value}

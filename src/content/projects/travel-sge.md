@@ -10,7 +10,7 @@ githubUrl: 'https://github.com/Valvln/progetto_python'
 linkedinUrl: 'https://www.linkedin.com/in/valerio-quaranta-873a512ba/'
 pdfPresentation:
   file: '/pdf/travel-sge.pdf'
-  label: 'Visualizza presentazione'
+  label: 'View presentation'
 order: 5
 ---
 

@@ -12,7 +12,7 @@ githubUrl: 'https://github.com/Valvln/project_ML'
 linkedinUrl: 'https://www.linkedin.com/in/valerio-quaranta-873a512ba/'
 pdfPresentation:
   file: '/pdf/diabetes-ml.pdf'
-  label: 'Visualizza presentazione'
+  label: 'View presentation'
 order: 4
 ---
 

@@ -8,7 +8,7 @@ interface Props {
 const { about } = Astro.props;
 
 const mailtoHref = about.contactEmail
-  ? `mailto:${about.contactEmail}?subject=${encodeURIComponent('Contatto dal portfolio')}`
+  ? `mailto:${about.contactEmail}?subject=${encodeURIComponent('Portfolio contact')}`
   : undefined;
 ---
 
@@ -17,12 +17,12 @@ const mailtoHref = about.contactEmail
     <h1 id="about-heading">About</h1>
     <p class="about-section__summary">{about.summary}</p>
 
-    <h2>Competenze</h2>
+    <h2>Skills</h2>
     <ul class="about-section__skills">
       {about.skills.map((skill) => <li>{skill}</li>)}
     </ul>
 
-    <h2>Contatti</h2>
+    <h2>Contact</h2>
     <div class="about-section__contacts">
       {
         mailtoHref && (
@@ -39,7 +39,7 @@ const mailtoHref = about.contactEmail
             rel="noopener noreferrer"
             class="about-section__contact-link"
           >
-            🔗 LinkedIn <span class="visually-hidden">(apre in una nuova scheda)</span>
+            🔗 LinkedIn <span class="visually-hidden">(opens in a new tab)</span>
           </a>
         )
       }
